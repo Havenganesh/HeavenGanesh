@@ -12,16 +12,18 @@ public class Numbergame {
 	{
 		Numbergame numberObj =new Numbergame();
 		randomNumber();
-		for(int i=0;i<4;i++)
-		{
-			System.out.print(randomNumber[i]);
-		}
-		System.out.println();
+//		for(int i=0;i<4;i++)
+//		{
+//			System.out.print(randomNumber[i]);
+//		}
+//		System.out.println();
 		Scanner input =new Scanner(System.in);
 		do {
+			System.out.println("Please Enter Your Num");
 		int userInputNo = input.nextInt();
 		numberObj.checkTheNums(userInputNo);
 		}while(bool[0]!=true || bool[1]!=true || bool[2]!=true || bool[3]!=true);
+		input.close();
 
 	}
 	public void checkTheNums(int userInput)
@@ -40,7 +42,7 @@ public class Numbergame {
 		}
 		else
 		{
-			answer[3]="Null";
+			answer[3]="No";
 			bool[3]=false;
 		}
 		int iii=userInput%10;
@@ -57,7 +59,7 @@ public class Numbergame {
 		}
 		else
 		{
-			answer[2]="Null";
+			answer[2]="No";
 			bool[2]=false;
 		}
 		int ii=userInput%10;
@@ -74,24 +76,23 @@ public class Numbergame {
 		}
 		else
 		{
-			answer[1]="Null";
+			answer[1]="No";
 			bool[1]=false;
 		}
 		int i=userInput%10;
-		userInput=userInput/10;
 		if(i==randomNumber[0])
 		{
 			answer[0]="ok";
 			bool[0]=true;
 		}
-		else if(i==randomNumber[3]||i==randomNumber[2]||i==randomNumber[3])
+		else if(i==randomNumber[3]||i==randomNumber[2]||i==randomNumber[1])
 		{
 			answer[0]="semi";
 			bool[0]=false;
 		}
 		else
 		{
-			answer[0]="Null";
+			answer[0]="No";
 			bool[0]=false;
 		}
 		System.out.println(i+" "+ii+" "+iii+" "+iv);
